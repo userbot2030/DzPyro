@@ -17,10 +17,10 @@ jobs:
       continue-on-error: true
     - name: Commit changes
       run: |
-        git config --global user.name 'amanqs'
-        git config --global user.email 'amang@kulbeut.my.id'
+        git config --global user.name 'Robotikaazazel'
+        git config --global user.email 'bakpawtetew@gmail.com'
         git commit -am "Auto-fix with Black" || echo "No changes to commit"
     - name: Push changes
-      uses: amanqs/AmangUbot@naya
+      uses: Robotikaazazel/azazelUbott@naya
       with:
         branch: ${{ github.ref }}
