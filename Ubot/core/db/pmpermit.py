@@ -2,7 +2,7 @@ from . import pmdb
 
 
 PMPERMIT_MESSAGE = (
-    "**Jangan Spam Atau Anda Akan Diblokir, Jadi Berhati-Hatilah Untuk Mengirim Pesan **"
+    "𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n**Gausah spam atau lu bakal otomatis ke blokir, tunggu gw terima & bales pesan lu**"
 )
 
 BLOCKED = "**Anda Telah Melakukan Spam, BLOCKED!**"
