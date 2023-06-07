@@ -38,10 +38,10 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 InlineKeyboardButton(
-                    text="❮", callback_data=f"{prefix}_prev({modulo_page})"
+                    text="«", callback_data=f"{prefix}_prev({modulo_page})"
                 ),
                 InlineKeyboardButton(
-                    text="❯", callback_data=f"{prefix}_next({modulo_page})"
+                    text="»", callback_data=f"{prefix}_next({modulo_page})"
                 ),
             ),
         ]
@@ -53,7 +53,7 @@ def cb_wrapper(func):
         users = list_users
         if cb.from_user.id not in users:
             await cb.answer(
-                "bikin sendiri ngapa, bikinnya di @GeezRam",
+                "order ubot prem @DZuserbot",
                 cache_time=0,
                 show_alert=True,
             )
@@ -83,7 +83,7 @@ def inline_wrapper(func):
                 results=[
                     (
                         InlineQueryResultArticle(
-                            title="bikin sendiri ngpa, bikinnya di @amwangsupport",
+                            title="order ubot prem @DZuserbot",
                             input_message_content=InputTextMessageContent(
                                 "You cannot access this Bot"
                             ),
