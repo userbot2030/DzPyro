@@ -18,7 +18,8 @@ from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 from . import *
 from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
-from DzText.text import no_adm, repp, pross, usernf, ban_1, ban_2, ban_3, 
+from DzText.text import dz, no_adm, repp, pross, usernf, rea
+from DzText.text import ban_1, ban_2, ban_3, ban_4, ban5
 
 admins_in_chat = {}
 
@@ -126,9 +127,9 @@ async def member_ban(client: Client, message: Message):
         )
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
-    msg = f"<b>Banned User:</b> {mention}\n<b>Banned By:</b> {message.from_user.mention}\n"
+    msg = f"{dz}\n\n<b>{ban_4}</b> {mention}\n<b>{ban_5}</b> {message.from_user.mention}\n"
     if reason:
-        msg += f"<b>Reason:</b> {reason}"
+        msg += f"<b>{rea}</b> {reason}"
     try:
         await message.chat.ban_member(user_id)
         await message.edit(msg)
