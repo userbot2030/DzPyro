@@ -92,7 +92,7 @@ async def set_chat_photo(client: Client, message: Message):
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
     if not (can_change_admin or can_change_member):
-        await message.reply("{no_adm}")
+        await message.reply(f"{no_adm}")
     if message.reply_to_message:
         if message.reply_to_message.photo:
             await client.set_chat_photo(
@@ -100,22 +100,22 @@ async def set_chat_photo(client: Client, message: Message):
             )
             return
     else:
-        await message.edit("{repp}")
+        await message.edit(f"{repp}")
 
 
 
 @Client.on_message(filters.command(["ban", "dban"], cmds) & filters.me)
 async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
-    ky = await message.reply("`{pross}`")
+    ky = await message.reply(f"`{pross}`")
     if not user_id:
-        return await message.edit("{usernf}")
+        return await message.edit(f"{usernf}")
     if user_id == client.me.id:
-        return await message.edit("{ban_1}")
+        return await message.edit(f"{ban_1}")
     if user_id in DEVS:
-        return await message.edit("{ban_2}")
+        return await message.edit(f"{ban_2}")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await message.edit("{ban_3}")
+        return await message.edit(f"{ban_3}")
     try:
         await ky.delete()
         mention = (await client.get_users(user_id)).mention
@@ -134,16 +134,16 @@ async def member_ban(client: Client, message: Message):
         await message.chat.ban_member(user_id)
         await message.edit(msg)
     except ChatAdminRequired:
-        return await message.edit("**{no_adm}**")
+        return await message.edit(f"**{no_adm}**")
 
 
 
 @Client.on_message(filters.command(["unban"], cmds) & filters.me)
 async def member_unban(client: Client, message: Message):
     reply = message.reply_to_message
-    zz = await message.reply("`Processing...`")
+    zz = await message.reply(f"`{pross}`")
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await message.edit("Tidak bisa unban ch")
+        return await message.edit(f"{unban_1})
 
     if len(message.command) == 2:
         user = message.text.split(None, 1)[1]
@@ -151,16 +151,16 @@ async def member_unban(client: Client, message: Message):
         user = message.reply_to_message.from_user.id
     else:
         return await message.edit(
-            "Berikan username, atau reply pesannya."
+            f"{unban_2}"
         )
     try:
         await message.chat.unban_member(user)
         await asyncio.sleep(0.1)
         await zz.delete()
         umention = (await client.get_users(user)).mention
-        await message.edit(f"Unbanned! {umention}")
+        await message.edit(f"{unban_3} {umention}")
     except ChatAdminRequired:
-        return await message.edit("**Anda bukan admin di group ini !**")
+        return await message.edit(f"**{no_adm}**")
 
 
 
