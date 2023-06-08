@@ -19,7 +19,7 @@ from . import *
 from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
 from DzText.text import dz, no_adm, repp, pross, usernf, rea
-from DzText.text import ban_1, ban_2, ban_3, ban_4, ban5
+from DzText.text import ban_1, ban_2, ban_3, ban_4, ban5, unban_1, unban_2, unban_3
 
 admins_in_chat = {}
 
@@ -158,7 +158,7 @@ async def member_unban(client: Client, message: Message):
         await asyncio.sleep(0.1)
         await zz.delete()
         umention = (await client.get_users(user)).mention
-        await message.edit(f"{unban_3} {umention}")
+        await message.edit(f"{dz}\n\n{unban_3} {umention}")
     except ChatAdminRequired:
         return await message.edit(f"**{no_adm}**")
 
