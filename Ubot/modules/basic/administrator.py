@@ -20,7 +20,7 @@ from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
 from DzText.text import dz, no_adm, repp, pross, usernf, rea
 from DzText.text import ban_1, ban_2, ban_3, ban_4, ban5, unban_1, unban_2, unban_3
-from DzText.text import pin_1, pin_2, unpin_1, 
+from DzText.text import pin_1, pin_2, unpin_1, mute_1, mute_2, mute_3, mute_4, mute_5, unmute_1
 
 admins_in_chat = {}
 
@@ -190,44 +190,44 @@ async def pin_message(client: Client, message):
 @Client.on_message(filters.command(["mute"], cmds) & filters.me)
 async def mute(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
-    nay = await message.reply("`Processing...`")
+    nay = await message.reply(f"`{pross}`")
     if not user_id:
-        return await message.edit("Pengguna tidak ditemukan.")
+        return await message.edit(f"{usernf}")
     if user_id == client.me.id:
-        return await message.edit("Tidak bisa mute diri sendiri.")
+        return await message.edit(f"{mute_1}")
     if user_id in DEVS:
-        return await message.edit("Tidak bisa mute dev!")
+        return await message.edit(f"{mute_2}")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await message.edit("Tidak bisa mute admin.")
+        return await message.edit(f"{mute_3}")
     await nay.delete()
     mention = (await client.get_users(user_id)).mention
     msg = (
-        f"**Muted User:** {mention}\n"
-        f"**Muted By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"{dz}\n\n**{mute_4}** {mention}\n"
+        f"**{mute_5}** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**{rea}** {reason}"
     try:
         await message.chat.restrict_member(user_id, permissions=ChatPermissions())
         await message.edit(msg)
     except ChatAdminRequired:
-        return await message.edit("**Anda bukan admin di group ini !**")
+        return await message.edit(f"**{no_adm}**")
 
 
 
 @Client.on_message(filters.command(["unmute"], cmds) & filters.me)
 async def unmute(client: Client, message: Message):
     user_id = await extract_user(message)
-    kl = await message.reply("`Processing...`")
+    kl = await message.reply(f"`{pross}`")
     if not user_id:
-        return await message.edit("Pengguna tidak ditemukan.")
+        return await message.edit(f"{usernf}")
     try:
         await message.chat.restrict_member(user_id, permissions=unmute_permissions)
         await kl.delete()
         umention = (await client.get_users(user_id)).mention
-        await message.edit(f"Unmuted! {umention}")
+        await message.edit(f"{dz}\n\n{unmute_1} {umention}")
     except ChatAdminRequired:
-        return await message.edit("**Anda bukan admin di group ini !**")
+        return await message.edit(f"**{no_adm}**")
 
 
 @Client.on_message(filters.command(["kick", "dkick"], cmds) & filters.me)
