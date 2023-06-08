@@ -84,13 +84,13 @@ async def extract_user_and_reason(message, sender_chat=False):
 
     return user, reason
 
-@Client.on_message(filters.command(["setgpic"], cmds) & filters.me)
+@Client.on_message(filters.command(["pasangpp"], cmds) & filters.me)
 async def set_chat_photo(client: Client, message: Message):
     zuzu = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
     if not (can_change_admin or can_change_member):
-        await message.reply("Kamu tidak punya akses wewenang")
+        await message.reply("Lu bukan admin tolol")
     if message.reply_to_message:
         if message.reply_to_message.photo:
             await client.set_chat_photo(
@@ -98,7 +98,7 @@ async def set_chat_photo(client: Client, message: Message):
             )
             return
     else:
-        await message.edit("Balas ke photo untuk set!")
+        await message.edit("Balas ke photo ya anj")
 
 
 
