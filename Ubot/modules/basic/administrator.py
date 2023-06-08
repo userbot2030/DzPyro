@@ -19,7 +19,7 @@ from . import *
 from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
 from DzText.text import dz, no_adm, repp, pross, usernf, rea
-from DzText.text import ban_1, ban_2, ban_3, ban_4, ban5, unban_1, unban_2, unban_3
+from DzText.text import ban_1, ban_2, ban_3, ban_4, ban_5, unban_1, unban_2, unban_3
 from DzText.text import pin_1, pin_2, unpin_1, mute_1, mute_2, mute_3, mute_4, mute_5, unmute_1
 from DzText.text import kick_1, kick_2, kick_3, kick_4, kick_5, prmt, full_prmt, dmt_1, dmt_2
 
@@ -145,7 +145,7 @@ async def member_unban(client: Client, message: Message):
     reply = message.reply_to_message
     zz = await message.reply(f"`{pross}`")
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await message.edit(f"{unban_1})
+        return await message.edit(f"{unban_1}")
 
     if len(message.command) == 2:
         user = message.text.split(None, 1)[1]
