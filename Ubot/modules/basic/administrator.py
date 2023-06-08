@@ -18,7 +18,7 @@ from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 from . import *
 from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
-from DzText.text import no_adm, repp, pross,
+from DzText.text import no_adm, repp, pross, usernf, ban_1, ban_2, ban_3, 
 
 admins_in_chat = {}
 
@@ -91,7 +91,7 @@ async def set_chat_photo(client: Client, message: Message):
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
     if not (can_change_admin or can_change_member):
-        await message.reply("{noadm}")
+        await message.reply("{no_adm}")
     if message.reply_to_message:
         if message.reply_to_message.photo:
             await client.set_chat_photo(
@@ -108,13 +108,13 @@ async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
     ky = await message.reply("`{pross}`")
     if not user_id:
-        return await message.edit("Tidak dapat menemukan pengguna.")
+        return await message.edit("{usernf}")
     if user_id == client.me.id:
-        return await message.edit("Tidak bisa banned diri sendiri.")
+        return await message.edit("{ban_1}")
     if user_id in DEVS:
-        return await message.edit("Tidak bisa banned Devs!")
+        return await message.edit("{ban_2}")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await message.edit("Tidak bisa banned admin.")
+        return await message.edit("{ban_3}")
     try:
         await ky.delete()
         mention = (await client.get_users(user_id)).mention
@@ -133,7 +133,7 @@ async def member_ban(client: Client, message: Message):
         await message.chat.ban_member(user_id)
         await message.edit(msg)
     except ChatAdminRequired:
-        return await message.edit("**Anda bukan admin di group ini !**")
+        return await message.edit("**{no_adm}**")
 
 
 
