@@ -50,7 +50,7 @@ async def adminlist(client: Client, message: Message):
     admin.sort()
     badmin.sort()
     totaladmins = len(creator) + len(admin) + len(badmin)
-    teks = "**Daftar Admin Di {}**\n".format(grup.title)
+    teks = "𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n\n**Daftar Admin Di {}**\n".format(grup.title)
     teks += "**Pemilik**\n"
     for x in creator:
         teks += "• {}\n\n".format(x)
@@ -81,7 +81,7 @@ async def adminlist(client: Client, message: Message):
 
 @Ubot(["zombies"], cmds)
 async def kickdel_cmd(client: Client, message: Message):
-    kk = await message.reply("<b>Membersihkan akun depresi...</b>")
+    kk = await message.reply("<b>Membersihkan akun terhapus...</b>")
     try:
         values = [
             await message.chat.ban_member(
@@ -95,7 +95,7 @@ async def kickdel_cmd(client: Client, message: Message):
     await asyncio.sleep(0.1)
     await kk.delete()
     await message.edit(
-        f"<b>Berhasil ditendang {len(values)} akun depresi (s)</b>"
+        f"𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n\n<b>Berhasil mengeluarkan {len(values)} akun terhapus (s)</b>"
     )
 
 
@@ -193,7 +193,7 @@ async def get_list_bots(client: Client, message: Message):
             nama = "☠️ Deleted account"
         if a.user.is_bot:
             bots.append(mention_markdown(a.user.id, nama))
-    teks = "**Daftar Bot Di {}**\n".format(grup.title)
+    teks = "𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n\**Daftar Bot Di {}**\n".format(grup.title)
     teks += "Bots\n"
     for x in bots:
         teks += "• {}\n".format(x)
@@ -206,8 +206,8 @@ async def get_list_bots(client: Client, message: Message):
 add_command_help(
     "misc",
     [
-        [f"admins", "Get chats Admins list."],
-        [f"zombies", "To Kick deleted Accounts."],
-        [f"bots","To get Chats Bots list"],
+        [f"admin", "Ngintip list admin di group"],
+        [f"zombies", "Mengeluarkan akun terhapus di group"],
+        [f"bots","Ngintip list bot di group"],
     ],
 )
