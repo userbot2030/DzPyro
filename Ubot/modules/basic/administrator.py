@@ -20,6 +20,7 @@ from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
 from DzText.text import dz, no_adm, repp, pross, usernf, rea
 from DzText.text import ban_1, ban_2, ban_3, ban_4, ban5, unban_1, unban_2, unban_3
+from DzText.text import pin_1, pin_2, unpin_1, 
 
 admins_in_chat = {}
 
@@ -167,23 +168,23 @@ async def member_unban(client: Client, message: Message):
 @Client.on_message(filters.command(["pin", "unpin"], cmds) & filters.me)
 async def pin_message(client: Client, message):
     if not message.reply_to_message:
-        return await message.reply("Balas ke pesan untuk pin/unpin .")
-    await message.edit("`Processing...`")
+        return await message.reply(f"{pin_1}")
+    await message.edit(f"`{pross}`")
     r = message.reply_to_message
     if message.command[0][0] == "u":
         await r.unpin()
         return await message.edit(
-            f"**Unpinned [this]({r.link}) message.**",
+            f"{dz}\n\n**{unpin_1}({r.link})**",
             disable_web_page_preview=True,
         )
     try:
         await r.pin(disable_notification=True)
         await message.edit(
-            f"**Pinned [this]({r.link}) message.**",
+            f"{dz}\n\n**{pin_2}({r.link})**",
             disable_web_page_preview=True,
         )
     except ChatAdminRequired:
-        return await message.edit("**Anda bukan admin di group ini !**")
+        return await message.edit(f"**{no_adm}**")
 
 
 @Client.on_message(filters.command(["mute"], cmds) & filters.me)
