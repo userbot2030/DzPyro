@@ -18,6 +18,7 @@ from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 from . import *
 from ubotlibs.ubot.helper.basic import eor
 from .profile import extract_user, extract_userid
+from DzText.text import no_adm, repp, pross,
 
 admins_in_chat = {}
 
@@ -90,7 +91,7 @@ async def set_chat_photo(client: Client, message: Message):
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
     if not (can_change_admin or can_change_member):
-        await message.reply("Lu bukan admin tolol")
+        await message.reply("{noadm}")
     if message.reply_to_message:
         if message.reply_to_message.photo:
             await client.set_chat_photo(
@@ -98,14 +99,14 @@ async def set_chat_photo(client: Client, message: Message):
             )
             return
     else:
-        await message.edit("Balas ke photo ya anj")
+        await message.edit("{repp}")
 
 
 
 @Client.on_message(filters.command(["ban", "dban"], cmds) & filters.me)
 async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
-    ky = await message.reply("`Processing...`")
+    ky = await message.reply("`{pross}`")
     if not user_id:
         return await message.edit("Tidak dapat menemukan pengguna.")
     if user_id == client.me.id:
