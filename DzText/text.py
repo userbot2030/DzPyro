@@ -3,6 +3,7 @@
 #REEDIT BOLEH HAPUS CREDIT ANAK YATIM🤙
 
 #BASIC TEXT
+dz = "𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎"
 no_adm = "Lu bukan admin tolol😭"
 repp = "Reply ke poto ya kontol"
 pross = "Processing..."
