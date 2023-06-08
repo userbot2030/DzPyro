@@ -88,7 +88,7 @@ async def extract_user_and_reason(message, sender_chat=False):
 
     return user, reason
 
-@Client.on_message(filters.command(["pasangpp"], cmds) & filters.me)
+@Client.on_message(filters.command(["setpg"], cmds) & filters.me)
 async def set_chat_photo(client: Client, message: Message):
     zuzu = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     can_change_admin = zuzu.can_change_info
@@ -349,15 +349,15 @@ async def demote(client: Client, message: Message):
 add_command_help(
     "admin",
     [
-        [f"ban [reply/username/userid]", "Ban pengguna."],
-        [f"unban [reply/username/userid]", "Unban pengguna.",],
-        [f"kick [reply/username/userid]", "kick pengguna dari group."],
-        [f"promote `or` .fullpromote","Promote pengguna.",],
-        [f"demote", "Demote pengguna."],
-        [f"mute [reply/username/userid]","Mute pengguna.",],
-        [f"unmute [reply/username/userid]","Unmute someone.",],
-        [f"pin [reply]","to pin any message.",],
-        [f"unpin [reply]","To unpin any message.",],
-        [f"setgpic [reply ke image]","To set an group profile pic",],
+        [f"ban [reply/username/userid]", "Ban pengguna dari group"],
+        [f"unban [reply/username/userid]", "Unban pengguna dari group",],
+        [f"kick [reply/username/userid]", "kick pengguna dari group"],
+        [f"promote `atau` .fullpromote [reply/username/userid]","Promote pengguna sebagai admin",],
+        [f"demote [reply/username/userid]", "Demote pengguna member"],
+        [f"mute [reply/username/userid]","Mute pengguna dari group",],
+        [f"unmute [reply/username/userid]","Unmute pengguna dari group",],
+        [f"pin [reply pesan]","Pin sebuah pesan",],
+        [f"unpin [reply pesan]","Unpin sebuah pesan",],
+        [f"setpg [reply ke foto]","pasang poto profil group",],
     ],
 )
