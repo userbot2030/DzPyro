@@ -1,8 +1,8 @@
-@MSDZULQRNN
-#t.me/MSPR0JECT | t.me/envSample
-#REEDIT BOLEH HAPUS CREDIT ANAK YATIM🤙
+# @MSDZULQRNN
+# t.me/MSPR0JECT | t.me/envSample
+# REEDIT BOLEH HAPUS CREDIT ANAK YATIM🤙
 
-#BASIC TEXT
+# BASIC TEXT
 dz = "𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎"
 no_adm = "Lu bukan admin tolol😭"
 pross = "Processing..."
