@@ -10,20 +10,12 @@ async def fsub(filter, client, update):
     if not FSUB:  
      return True
     user_id = update.from_user.id
-    if user_id in DEV
-     return True
     if user_id in GUA
      return True
-    if user_id in BLACK
-     return True
-    if user_id in ADMINS
-     return True
     try:
-        try:
-            await bot.get_chat_member(FSUB, msg.from_user.id)
-        except UserNotParticipant:
-            if FSUB.isalpha():
-                link = "https://t.me/" + FSUB
+        member = await client.get_chat_member(chat_id = FSUB, user_id = user_id)
+    except UserNotParticipant:
+        return False
             try:
                 await msg.reply(
                     f"TEXT",
