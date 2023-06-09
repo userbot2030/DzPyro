@@ -73,6 +73,7 @@ XCB = [
 @app.on_message(filters.command(["start"]))
 async def start_(client: Client, message: Message):
 	
+    if not fsub
     await message.reply_text(
         f"""<b>👋 Halo {message.from_user.first_name} \n
 💭 Selamat Datang di bot
