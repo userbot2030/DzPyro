@@ -31,7 +31,7 @@ from io import BytesIO
 from ubotlibs.ubot.utils.misc import *
 from Ubot.logging import LOGGER
 from config import *
-from Ubot.modules.bot.accprem import fsub
+from Ubot.modules.bot.accprem import accdz
 
 def restart():
     os.execvp(sys.executable, [sys.executable, "-m", "Ubot"])
@@ -70,11 +70,8 @@ XCB = [
 ]
 
 
-@app.on_message(filters.command(["start"]))
+@app.on_message(filters.command(["start"]) & filters.private & accprem)
 async def start_(client: Client, message: Message):
-	
-    if not fsub:
-          return
     try:
 	await message.reply_text(
         f"""<b>👋 Halo {message.from_user.first_name} \n
@@ -97,7 +94,7 @@ async def start_(client: Client, message: Message):
         ),
      disable_web_page_preview=True
     )
-    
+@app.on_message(filters.command('start') & filters.private)
         
 @app.on_message(filters.command("control") & ~filters.via_bot)
 @app.on_message(filters.private & filters.command("control") & ~filters.via_bot
