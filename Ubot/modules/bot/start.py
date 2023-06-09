@@ -31,6 +31,7 @@ from io import BytesIO
 from ubotlibs.ubot.utils.misc import *
 from Ubot.logging import LOGGER
 from config import *
+from Ubot.modules.bot.accprem import fsub
 
 def restart():
     os.execvp(sys.executable, [sys.executable, "-m", "Ubot"])
@@ -71,8 +72,7 @@ XCB = [
 
 @app.on_message(filters.command(["start"]))
 async def start_(client: Client, message: Message):
-    ADMIN1 = ADMIN1_ID[0]
-    ADMIN2 = ADMIN2_ID[0]
+	
     await message.reply_text(
         f"""<b>👋 Halo {message.from_user.first_name} \n
 💭 Selamat Datang di bot
