@@ -31,7 +31,7 @@ from io import BytesIO
 from ubotlibs.ubot.utils.misc import *
 from Ubot.logging import LOGGER
 from config import *
-from Ubot.modules.bot.accprem import accdz
+
 
 def restart():
     os.execvp(sys.executable, [sys.executable, "-m", "Ubot"])
@@ -70,42 +70,7 @@ XCB = [
 ]
 
 
-@app.on_message(filters.command(["start"]) & filters.private & accprem)
-async def start_(client: Client, message: Message):
-    try:
-	await message.reply_text(
-        f"""<b>👋 Halo {message.from_user.first_name} \n
-💭 Selamat Datang di bot
-❓ Apa saja sih fiturnya?,kalo mau lihat fitur ubotnya, pm ke admin dibawah ini.
-💡 Jika ingin membuat Userbot premium . Kamu bisa hubungin admin dibawah ini membuat bot.</b>""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(text="👮‍♂ Admin 1", url=f"https://t.me/amwang"),
-                    InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Oktaaaaasaa"),
-                ],
-		[
-                    InlineKeyboardButton(text="Support", url=f"https://t.me/amwangsupport"),
-		],
-		[
-                     InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
-                  ],
-             ]
-        ),
-     disable_web_page_preview=True
-    )
 
-@Client.on_message(filters.command(["start"]) & filters.private)
-async def not_joined(client: Client, message: Message):
-    text = "HALO DEK JOIN KONTOL"
-    reply_markup = InlineKeyboardMarkup(
-	    [[ InlineKeyboardButton(text="HALO", url="")],
-	     [ InlineKeyboardButton(text="DEK", url=""),
-	       InlineKeyboardButton(text="ANJ", url="")]
-	    ])
-    await message.reply(text=text, reply_markup=reply_markup,
-    disable_web_page_preview = True
-	)
 	
 	
         
