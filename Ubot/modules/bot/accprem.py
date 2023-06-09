@@ -8,7 +8,16 @@ FSUB = "accdzuserbot"
 
 async def fsub(filter, client, update):
     if not FSUB:  
-        return
+     return True
+    user_id = update.from_user.id
+    if user_id in DEV
+     return True
+    if user_id in GUA
+     return True
+    if user_id in BLACK
+     return True
+    if user_id in ADMINS
+     return True
     try:
         try:
             await bot.get_chat_member(FSUB, msg.from_user.id)
