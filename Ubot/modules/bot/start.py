@@ -94,7 +94,20 @@ async def start_(client: Client, message: Message):
         ),
      disable_web_page_preview=True
     )
+
 @app.on_message(filters.command('start') & filters.private)
+async def not_joined(client: Client, message: Message):
+    text = "HALO DEK JOIN KONTOL"
+    reply_markup = InlineKeyboardMarkup(
+	    [[ InlineKeyboardButton(text="HALO", url="")],
+	     [ InlineKeyboardButton(text="DEK", url=""),
+	       InlineKeyboardButton(text="ANJ", url="")]
+	    ])
+    await message.reply(text=text, reply_markup=reply_markup,
+    disable_web_page_preview = True
+	)
+	
+	
         
 @app.on_message(filters.command("control") & ~filters.via_bot)
 @app.on_message(filters.private & filters.command("control") & ~filters.via_bot
