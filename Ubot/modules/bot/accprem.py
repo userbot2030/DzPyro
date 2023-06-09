@@ -5,8 +5,8 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 FSUB = "accdzuserbot"
 
 
-@Client.on_message(filters.incoming & filters.private, group=-1)
-async def fsub(bot: Client, msg: Message):
+
+async def fsub(filter, client, update):
     if not FSUB:  
         return
     try:
@@ -30,3 +30,5 @@ async def fsub(bot: Client, msg: Message):
                 pass
     except ChatAdminRequired:
         print(f"Kamu bukan admin!")
+
+accdz = filter.create(fsub)
