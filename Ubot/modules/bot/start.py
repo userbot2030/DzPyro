@@ -70,7 +70,31 @@ XCB = [
 ]
 
 
-
+@app.on_message(filters.command(["start"]))
+async def start_(client: Client, message: Message):
+    ADMIN1 = ADMIN1_ID[0]
+    ADMIN2 = ADMIN2_ID[0]
+    await message.reply_text(
+        f"""<b>👋 Halo {message.from_user.first_name} \n
+💭 Selamat Datang di bot
+❓ Apa saja sih fiturnya?,kalo mau lihat fitur ubotnya, pm ke admin dibawah ini.
+💡 Jika ingin membuat Userbot premium . Kamu bisa hubungin admin dibawah ini membuat bot.</b>""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(text="👮‍♂ Admin 1", url=f"https://t.me/amwang"),
+                    InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Oktaaaaasaa"),
+                ],
+		[
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/amwangsupport"),
+		],
+		[
+                     InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
+                  ],
+             ]
+        ),
+     disable_web_page_preview=True
+    )
 	
 	
         
