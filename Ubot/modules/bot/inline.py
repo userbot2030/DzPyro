@@ -78,12 +78,12 @@ async def alive_function(message, answers):
     ping = (datetime.now() - start).microseconds / 1000
     uptime = await get_readable_time((time.time() - StartTime))
     msg = (
-        f"<b>AmangUserbot</b>\n"
-        f"<b> status: Premium {status} </b>\n"
-        f"    <b> expired:</b> <code>{remaining_days}</code>\n"
-        f"    <b> ping_ubot:</b> <code>{ping} ms</code>\n"
-        f"    <b> peer_ubot:</b> <code>{user}</code>\n"
-        f"    <b> uptime_ubot:</b> <code>{uptime}</code>\n")
+        f"𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n\n"
+        f"<b> status: {status}</b>\n"
+        f"<b> expired:</b> <code>{remaining_days}</code>\n"
+        f"<b> ping:</b> <code>{ping} ms</code>\n"
+        f"<b> member:</b> <code>{user}</code>\n"
+        f"<b> uptime:</b> <code>{uptime}</code>\n")
     answers.append(
         InlineQueryResultArticle(
             title="alive",
