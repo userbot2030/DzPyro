@@ -74,7 +74,7 @@ XCB = [
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""
-👋 **Halo {message.from_user.fist_name}
+👋 **Halo {message.from_user.first_name}
 ━━━━━━━━━━━━━━━━━━━━━━━━
 𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ᴘʀᴇᴍɪᴜᴍ💎
 ├ ʀᴘ. 20.000  [ ᴘᴇʀʙᴜʟᴀɴ ]
