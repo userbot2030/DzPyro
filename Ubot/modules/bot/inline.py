@@ -64,11 +64,11 @@ async def get_readable_time(seconds: int) -> str:
 async def alive_function(message, answers):
     status = ""
     if message._client.me.id in BLACK:
-        status = "[owner]"
+        status = "[owner👤]"
     elif message._client.me.id == OWNER_ID:
-        status = "ADMINS"
+        status = "[admin👥]"
     else:
-        status = "[user]"
+        status = "[user🔥]"
     start = datetime.now()
     buttons = support()
     ex = await message._client.get_me()
@@ -80,6 +80,7 @@ async def alive_function(message, answers):
     msg = (
         f"𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n\n"
         f"<b> status: {status}</b>\n"
+        f"<b> type: premium💎</b>\n"
         f"<b> expired:</b> <code>{remaining_days}</code>\n"
         f"<b> ping:</b> <code>{ping} ms</code>\n"
         f"<b> member:</b> <code>{user}</code>\n"
