@@ -72,21 +72,25 @@ XCB = [
 
 @app.on_message(filters.command(["start"]))
 async def start_(client: Client, message: Message):
-    ADMIN1 = ADMIN1_ID[0]
-    ADMIN2 = ADMIN2_ID[0]
     await message.reply_text(
-        f"""<b>👋 Halo {message.from_user.first_name} \n
-💭 Selamat Datang di bot
-❓ Apa saja sih fiturnya?,kalo mau lihat fitur ubotnya, pm ke admin dibawah ini.
-💡 Jika ingin membuat Userbot premium . Kamu bisa hubungin admin dibawah ini membuat bot.</b>""",
+        f"""
+👋 **Halo {message.from_user.fist_name}
+━━━━━━━━━━━━━━━━━━━━━━━━
+𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ᴘʀᴇᴍɪᴜᴍ💎
+├ ʀᴘ. 20.000  [ ᴘᴇʀʙᴜʟᴀɴ ]
+├ ᴅᴇᴘʟᴏʏ ᴅɪ ᴠᴘs
+├ ꜰᴜʟʟ ɢᴀʀᴀɴꜱɪ 1 ʙᴜʟᴀɴ
+└ sɪsᴛᴇᴍ ᴛᴇʀɪᴍᴀ ᴊᴀᴅɪ
+━━━━━━━━━━━━━━━━━━━━━━━━
+Hubungi admin dibawah untuk mengaktifkan userbot🤖**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="👮‍♂ Admin 1", url=f"https://t.me/amwang"),
-                    InlineKeyboardButton(text="👮‍♂ Admin 2", url=f"https://t.me/Oktaaaaasaa"),
-                ],
+                    InlineKeyboardButton(text="ADMIN 👤", url=f"https://t.me/MSDZULQRNN"),
+		],
 		[
-                    InlineKeyboardButton(text="Support", url=f"https://t.me/amwangsupport"),
+                    InlineKeyboardButton(text="Channel", url=f"https://t.me/MSPR0JECT"),
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/envSample"),
 		],
 		[
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
