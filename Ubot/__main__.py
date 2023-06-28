@@ -22,7 +22,7 @@ BOT_VER ="8.1.0"
 
 
 MSG_ON = """
-**Azazel Userbot Actived ✅**
+**DzUserbot Actived ✅**
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 ◉ **Versi** : `{}`
 ◉ **Phython** : `{}`
