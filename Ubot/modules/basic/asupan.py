@@ -39,7 +39,7 @@ async def asupan(client: Client, message: Message):
     )
 
 # WARNING PORNO VIDEO THIS !!!
-"""
+
 @Ubot(["Bokep"], cmds)
 async def asupin(client: Client, message: Message):
     if message.chat.id in BL_UBOT:
@@ -59,23 +59,6 @@ async def asupin(client: Client, message: Message):
             ),
             reply_to_message_id=ReplyCheck(message),
         ),
-    )"""
-
-@Ubot(["bokep")], cmds)
-async def bkp(client, message):
-    if messenge.chat.id in BL_UBOT:
-        return await message.reply("**Tidak bisa di gunakan di Group Support**")
-    bukp = await message.edit("🔎 `Search Bokep...`")
-    await message.reply_photo(
-        choice(
-            [
-                ppq.photo.file_id
-                async for ppq in client.search_message(
-                    "AsupanManzoku", filter=enums.MessageFilter.PHOTO
-                )
-            ]
-        ),
-        False,
     )
 
 @Ubot(["Ayang"], cmds)
@@ -232,7 +215,6 @@ add_command_help(
         [f"ppcp", "Mencari Foto PP Couple Random."],
         [f"ppcp2", "Mencari Foto PP Couple Random 2."],
         [f"bokep", "to send random porno videos."],
-        [f"bugil", "to send photo porno random."],
         [f"anime", "Mencari Foto PP Couple Anime."],
         [f"anime2", "Mencari Foto Anime."],
     ],
