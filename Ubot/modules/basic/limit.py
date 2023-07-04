@@ -12,26 +12,26 @@ from . import *
 from ubotlibs.ubot.helper.basic import edit_or_reply
 
 
-from asyncio import sleep
-from pyrogram.raw.functions.messages import DeleteHistory, StartBot
-
 @Ubot(["limit"], cmds)
-async def spamban(client, message):
+async def spamban(client: Client, m: Message):
     await client.unblock_user("SpamBot")
-    bot_info = await client.resolve_peer("SpamBot")
-    msg = await eor(message, "<code>Processing . . .</code>")
-    response = await client.invoke(
-        StartBot(
-            bot=bot_info,
-            peer=bot_info,
+    response = await client.send(
+        raw.functions.messages.StartBot(
+            bot=await client.resolve_peer("SpamBot"),
+            peer=await client.resolve_peer("SpamBot"),
             random_id=client.rnd_id(),
             start_param="start",
         )
     )
-    await sleep(1)
-    status = await client.get_messages("SpamBot", response.updates[1].message.id + 1)
-    await msg.edit(status.text)
-    return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
+    mm = await m.reply_text("`Processing...`")
+    await asyncio.sleep(1)
+    await mm.delete()
+    spambot_msg = response.updates[1].message.id + 1
+    status = await client.get_messages(chat_id="SpamBot", message_ids=spambot_msg)
+    await m.reply_text(f"~ {status.text}")
+    await asyncio.sleep(1)
+    await m.delete()
+    await m.edit_text("~ Cek limit akun mu [disini](https://t.me/SpamBot?start=start)", disable_web_page_preview=False)
 
 add_command_help(
     "limit",
