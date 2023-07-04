@@ -7,6 +7,7 @@
 
 import asyncio
 from pyrogram import Client, filters, raw
+from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import Message
 from . import *
 from ubotlibs.ubot.helper.basic import edit_or_reply
