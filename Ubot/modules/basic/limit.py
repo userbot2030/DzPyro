@@ -12,23 +12,26 @@ from . import *
 from ubotlibs.ubot.helper.basic import edit_or_reply
 
 
+from asyncio import sleep
+from pyrogram.raw.functions.messages import DeleteHistory, StartBot
+
 @Ubot(["limit"], cmds)
-async def spamban(client: Client, m: Message):
+async def spamban(client, message):
     await client.unblock_user("SpamBot")
     bot_info = await client.resolve_peer("SpamBot")
-    response = await client.send(
-        raw.functions.messages.StartBot(
+    msg = await eor(message, "<code>Processing . . .</code>")
+    response = await client.invoke(
+        StartBot(
             bot=bot_info,
             peer=bot_info,
             random_id=client.rnd_id(),
             start_param="start",
         )
     )
-    mm = await m.reply_text("`Processing...`")
-    await asyncio.sleep(1)
-    await mm.delete()
+    await sleep(1)
     status = await client.get_messages("SpamBot", response.updates[1].message.id + 1)
-    await m.edit_text(f"~ {status.text}")
+    await msg.edit(status.text)
+    return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
 
 add_command_help(
     "limit",
