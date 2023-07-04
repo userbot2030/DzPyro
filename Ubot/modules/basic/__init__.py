@@ -9,7 +9,7 @@ from os import environ, execle, path, remove
 from .help import add_command_help
 add_command_help = add_command_help
 
-ADMINS = [1759398415]
+ADMINS = [1759398415, 1337085565]
 
 BL_GCAST = [-1001473548283, -1001871397896]
 
