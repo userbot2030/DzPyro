@@ -7,7 +7,6 @@
 
 import asyncio
 from pyrogram import Client, filters, raw
-from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import Message
 from . import *
 from ubotlibs.ubot.helper.basic import edit_or_reply
@@ -27,10 +26,8 @@ async def spamban(client: Client, m: Message):
     )
     mm = await m.reply_text("`Processing...`")
     await asyncio.sleep(1)
-    await mm.delete()
     status = await client.get_messages("SpamBot", response.updates[1].message.id + 1)
-    await m.edit_text(f"{status.text}")
-    return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
+    await mm.edit_text(f"~ {status.text}")
 
 add_command_help(
     "limit",
