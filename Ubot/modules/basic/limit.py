@@ -28,6 +28,7 @@ async def spamban(client: Client, m: Message):
     await mm.delete()
     status = await client.get_messages("SpamBot", response.updates[1].message.id + 1)
     await m.edit_text(f"{status.text}")
+    return await client.invoke(DeleteHistory(peer=bot_info, max_id=0, revoke=True))
 
 add_command_help(
     "limit",
