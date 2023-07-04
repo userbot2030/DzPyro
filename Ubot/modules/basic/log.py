@@ -15,7 +15,7 @@ from Ubot.core.db import *
 from ubotlibs.ubot.utils.tools import get_arg
 
 
-"""
+
 @Client.on_message(
     filters.private
     & filters.incoming
@@ -52,7 +52,7 @@ async def log_tagged_messages(client, message):
         parse_mode=enums.ParseMode.HTML,
         disable_web_page_preview=True,
     )
-"""
+
 
 
 @Ubot("setlog", cmds)
