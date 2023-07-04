@@ -27,7 +27,6 @@ async def spamban(client: Client, m: Message):
     await asyncio.sleep(1)
     await mm.delete()
     status = await client.get_messages("SpamBot", response.updates[1].message.id + 1)
-    status = await client.get_messages(chat_id="SpamBot", message_ids=spambot_msg)
     await m.edit_text(f"~ {status.text}")
 
 add_command_help(
