@@ -261,7 +261,7 @@ bot14 = (
 
 bot15 = (
     Client(
-        name="bot10",
+        name="bot15",
         api_id=API_ID,
         api_hash=API_HASH,
         session_string=SESSION15,
@@ -272,8 +272,78 @@ bot15 = (
     if SESSION15
     else None
 )
+
+bot16 = (
+    Client(
+        name="bot16",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION16,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION16
+    else None
+)
+
+bot17 = (
+    Client(
+        name="bot17",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION17,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION17
+    else None
+)
+
+bot18 = (
+    Client(
+        name="bot18",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION18,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION18
+    else None
+)
+
+bot19 = (
+    Client(
+        name="bot19",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION19,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION19
+    else None
+)
+
+bot20 = (
+    Client(
+        name="bot20",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=SESSION20,
+        workers=USER_WORKERS,
+        plugins=dict(root="Ubot/modules"),
+        in_memory=True,
+    )
+    if SESSION20
+    else None
+)
   
-bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10, bot11, bot12, bot13, bot14, bot15] if bot]
+bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10, bot11, bot12, bot13, bot14, bot15, bot16, bot17, bot18, bot19, bot20] if bot]
 
 for bot in bots:
     if not hasattr(bot, "group_call"):
