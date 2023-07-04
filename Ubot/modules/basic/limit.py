@@ -15,10 +15,11 @@ from ubotlibs.ubot.helper.basic import edit_or_reply
 @Ubot(["limit"], cmds)
 async def spamban(client: Client, m: Message):
     await client.unblock_user("SpamBot")
+    bot_info = await client.resolve_peer("SpamBot")
     response = await client.send(
         raw.functions.messages.StartBot(
-            bot=await client.resolve_peer("SpamBot"),
-            peer=await client.resolve_peer("SpamBot"),
+            bot=bot_info,
+            peer=bot_info,
             random_id=client.rnd_id(),
             start_param="start",
         )
