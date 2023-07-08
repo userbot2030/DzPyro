@@ -38,7 +38,7 @@ def restart():
 
 HAPP = None
 
-GUA = [1337085565]
+GUA = [1814359323]
 
 load_dotenv()
 
@@ -86,11 +86,11 @@ Hubungi admin dibawah untuk mengaktifkan userbot🤖**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="ADMIN 👤", url=f"https://t.me/MSDZULQRNN"),
+                    InlineKeyboardButton(text="ADMIN 👤", url=f"https://t.me/msdqqq"),
 		],
 		[
-                    InlineKeyboardButton(text="Channel", url=f"https://t.me/MSPR0JECT"),
-                    InlineKeyboardButton(text="Support", url=f"https://t.me/envSample"),
+                    InlineKeyboardButton(text="Channel", url=f"https://t.me/DezetStore"),
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/DezetSupport"),
 		],
 		[
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
