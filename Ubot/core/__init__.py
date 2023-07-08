@@ -11,8 +11,8 @@ from .constants import *
 
 async def ajg(client):
     try:
-        await client.join_chat("MSPR0JECT")
-        await client.join_chat("envSample")
-        await client.join_chat("stories_zulll")
+        await client.join_chat("DezetStore")
+        await client.join_chat("DezetSupport")
+        await client.join_chat("")
     except BaseException:
         pass
