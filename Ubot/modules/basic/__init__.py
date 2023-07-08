@@ -9,13 +9,13 @@ from os import environ, execle, path, remove
 from .help import add_command_help
 add_command_help = add_command_help
 
-ADMINS = [1759398415, 1337085565]
+ADMINS = [1814359323]
 
 BL_GCAST = [-1001473548283, -1001871397896]
 
 
 BL_UBOT = [-1001812143750]
-DEVS = [1337085565]
+DEVS = [1814359323]
 
 def restart():
     os.execvp(sys.executable, [sys.executable, "-m", "Ubot"])
