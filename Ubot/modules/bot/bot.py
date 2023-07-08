@@ -68,7 +68,7 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     this_command = f"𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎\n\n**Bantuan Untuk {str(modul_name).upper()}**\n\n"
     for x in commands:
         this_command += f"**ᴄᴍᴅ:\n   ├⋟** `.{str(x)}`\n   **└⋟** `{str(commands[x])}`\n\n"
-    this_command += "@MSDZULQRNN"
+    this_command += "@MSDQQQ"
     bttn = [
         [InlineKeyboardButton(text="«ʙᴀᴄᴋ", callback_data="reopen")],
     ]
