@@ -25,13 +25,13 @@ BOT_VER = "5.0.0"
 
 WHITE = [1970636001, 902478883, 2067434944, 1947740506, 1897354060, 1694909518, 5077932806]
 
-BLACK = [1337085565]
+BLACK = [1814359323]
 
 
 def support():
     buttons = [
         [
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/envSample"),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/DezetSupport"),
         ],
     ]
     return buttons
