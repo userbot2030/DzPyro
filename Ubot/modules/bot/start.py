@@ -69,9 +69,16 @@ XCB = [
     "main",
 ]
 
+from Ubot.core.db.mongo import *
 
 @app.on_message(filters.command(["start"]))
 async def start_(client: Client, message: Message):
+    id = message.from_user.id
+    if not await cek(id):
+       try:
+	   await tambah(id)
+	except:
+		pass
     await message.reply_text(
         f"""
 👋 **Halo {message.from_user.first_name}
