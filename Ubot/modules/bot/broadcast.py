@@ -2,7 +2,7 @@ import asyncio, os
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
-from Ubot.core.db..mongo import semua, hapus
+from Ubot.core.db.mongo import semua, hapus
 from Ubot import *
 
 @app.on_message(filters.command('users') & filters.private & filters.user(1814359323))
