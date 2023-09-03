@@ -1,10 +1,10 @@
 import pymongo, os
-from config import MONGO_URI
+from config import MONGO_URL
 
 DB_NAME = "uprem"
 
 
-dbclient = pymongo.MongoClient(MONGO_URI)
+dbclient = pymongo.MongoClient(MONGO_URL)
 database = dbclient[DB_NAME]
 
 user_data = database['users']
