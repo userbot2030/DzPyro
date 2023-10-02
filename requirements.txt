@@ -5,7 +5,6 @@ googletrans
 pytgcalls==3.0.0.dev24
 openai
 uvloop
-ffmpeg-python
 git+https://github.com/yt-dlp/yt-dlp.git
 youtube-search
 youtube-search-python
@@ -56,3 +55,4 @@ aiosqlite>=0.16.0,<0.18.0
 Pillow
 git+https://github.com/Itz-fork/py-extract.git
 ubotlibs
+git+https://github.com/kkroening/ffmpeg-python
