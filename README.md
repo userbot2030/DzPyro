@@ -9,7 +9,7 @@
 
 ## Deploy on Heroku
 <h3 align="center">Click The Button</h3>
-<a href="https://dashboard.heroku.com/new?template=https://github.com/userbot2030/DzPyro"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/Wildan2024/DzPyro"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
 
