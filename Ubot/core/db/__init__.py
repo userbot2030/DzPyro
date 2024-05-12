@@ -47,8 +47,8 @@ async def buat_log(bot):
         botlog_chat_id = user_data.get("bot_log_group_id")
 
     if not user_data or not botlog_chat_id:
-        group_name = 'DzUserbot Logs'
-        group_description = 'Jangan Hapus Atau Keluar Dari Grup Ini\n\nCreated By @DzUserbot Updates @MSPR0JECT\nJika menemukan kendala atau ingin menanyakan sesuatu\nHubungi : @MSDZULQRNN atau bisa ke @envSample'
+        group_name = 'DanUserbot Logs'
+        group_description = 'Jangan Hapus Atau Keluar Dari Grup Ini\n\nCreated By @DanUserbot Updates @mhmdwldnnnn\nJika menemukan kendala atau ingin menanyakan sesuatu\nHubungi : @mhmdwldnnnn atau bisa ke @Disney_storeDan'
         group = await bot.create_supergroup(group_name, group_description)
         botlog_chat_id = group.id
         message_text = 'Grup Log Berhasil Dibuat,\nKetik `/setlog` untuk menentapkan grup log ini sebagai tempat log bot\nJangan Hapus Atau Keluar Dari Grup Ini.\n\n**Notes** : Ketik .ping atau .alive untuk mengecek userbot'
