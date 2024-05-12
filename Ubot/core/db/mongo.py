@@ -1,7 +1,7 @@
 import pymongo, os
 from config import MONGO_URL
 
-DB_NAME = "uprem"
+DB_NAME = "wildanuprem"
 
 
 dbclient = pymongo.MongoClient(MONGO_URL)
