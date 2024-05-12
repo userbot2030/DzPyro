@@ -5,13 +5,13 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from Ubot.core.db.mongo import semua, hapus
 from Ubot import *
 
-@app.on_message(filters.command('users') & filters.private & filters.user(1814359323))
+@app.on_message(filters.command('users') & filters.private & filters.user(5779185981))
 async def get_users(client: Client, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text="Tunggu sebentar...")
     users = await semua()
     await msg.edit(f"{len(users)} users are using this bot")
 
-@app.on_message(filters.private & filters.command('broadcast') & filters.user(1814359323))
+@app.on_message(filters.private & filters.command('broadcast') & filters.user(5779185981))
 async def send_text(client: Client, message: Message):
     if message.reply_to_message:
         query = await semua()
