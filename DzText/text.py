@@ -1,9 +1,9 @@
-# @MSDZULQRNN
-# t.me/MSPR0JECT | t.me/envSample
+# @mhmdwldnnnn
+# t.me/mhmdwldnnnn | t.me/Disney_storeDan
 # REEDIT BOLEH HAPUS CREDIT ANAK YATIM🤙
 
 # BASIC TEXT
-dz = "𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎"
+dz = "𝘿𝘼𝙉-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💎"
 no_adm = "Lu bukan admin tolol😭"
 pross = "Processing..."
 rea = "Karena :"
