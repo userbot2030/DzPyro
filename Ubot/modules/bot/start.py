@@ -38,7 +38,7 @@ def restart():
 
 HAPP = None
 
-GUA = [1814359323]
+GUA = [5779185981]
 
 load_dotenv()
 
@@ -83,7 +83,7 @@ async def start_(client: Client, message: Message):
         f"""
 👋 **Halo {message.from_user.first_name}
 ━━━━━━━━━━━━━━━━━━━━━━━━
-𝘿𝙕-𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ᴘʀᴇᴍɪᴜᴍ💎
+𝘿𝘼𝙉-𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ᴘʀᴇᴍɪᴜᴍ💎
 ├ ʀᴘ. 20.000  [ ᴘᴇʀʙᴜʟᴀɴ ]
 ├ ᴅᴇᴘʟᴏʏ ᴅɪ ᴠᴘs
 ├ ꜰᴜʟʟ ɢᴀʀᴀɴꜱɪ 1 ʙᴜʟᴀɴ
@@ -93,11 +93,11 @@ Hubungi admin dibawah untuk mengaktifkan userbot🤖**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="ADMIN 👤", url=f"https://t.me/msdqqq"),
+                    InlineKeyboardButton(text="ADMIN 👤", url=f"https://t.me/mhmdwldnnnn"),
 		],
 		[
-                    InlineKeyboardButton(text="Channel", url=f"https://t.me/DezetStore"),
-                    InlineKeyboardButton(text="Support", url=f"https://t.me/DezetSupport"),
+                    InlineKeyboardButton(text="Channel", url=f"https://t.me/Disney_storeDan"),
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/suportdanuserbot"),
 		],
 		[
                      InlineKeyboardButton(text="Tutup", callback_data="cl_ad"),
@@ -261,7 +261,7 @@ async def usage_dynos(client, message):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**Penggunaan Dyno AmangUbot**
+**Penggunaan Dyno DanUbot**
 
  ❏ Dyno terpakai:
  ├ Terpakai: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
